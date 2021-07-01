@@ -1,0 +1,39 @@
+{
+	"menu": [
+		{
+			"title": "Wok Том ям с креветкой",
+			"price": 349,
+			"url": "blob:https://sushiwok.ru/ca554213-6ae1-4677-8843-2eb27e25079d",
+			"category": "wok",
+			"id": 1
+		},
+		{
+			"title": "Wok Том кха с цыпленком",
+			"price": 279,
+			"url": "blob:https://sushiwok.ru/73fc3f36-849c-43b0-ada1-15b462cc60db",
+			"category": "wok",
+			"id": 2
+		},
+		{
+			"title": "Wok Сальса",
+			"price": 299,
+			"url": "blob:https://sushiwok.ru/3a7957b5-7363-45e5-acf1-9ed428a6c8d6",
+			"category": "wok",
+			"id": 3
+		},
+		{
+			"title": "Wok классический",
+			"price": 229,
+			"url": "blob:https://sushiwok.ru/03b56f84-2f00-410a-ae07-8a3694854dbe",
+			"category": "wok",
+			"id": 4
+		},
+		{
+			"title": "Wok морской",
+			"price": 349,
+			"url": "blob:https://sushiwok.ru/bac4d84c-5134-4e0e-ad6c-d31144841f3f",
+			"category": "wok",
+			"id": 5
+		}
+	]
+}
