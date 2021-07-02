@@ -1,14 +1,18 @@
 import React from 'react';
 import {MainPage, CartPage} from '../pages';
 import AppHeader from '../app-header';
+import { Route, Switch } from 'react-router-dom';
 
 
 const App = () => {
     return (
         <div style={{backgroundColor: 'rgba(204,70,70,1)'}} className="app">
             <AppHeader total={50}/>
-            <MainPage/>
-            <CartPage/>
+            <Switch>
+                <Route path="/" component={MainPage} exact/>
+                 <Route path="/" component={CartPage} />
+            </Switch>
+            
         </div>
     )
 }
