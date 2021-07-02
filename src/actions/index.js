@@ -10,3 +10,9 @@ export const menuRequested = () => {
     type: 'MENU_REQUESTED',
   }
 }
+export const addedToCart = (id) => {
+  return {
+    type: 'ITEM_TO_CART',
+    payload: id
+  }
+}
