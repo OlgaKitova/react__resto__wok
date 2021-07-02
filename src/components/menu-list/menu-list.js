@@ -3,11 +3,13 @@ import MenuListItem from '../menu-list-item';
 import { connect } from 'react-redux';
 import WithRestoService from '../hoc';
 import Spinner from '../spinner';
+import { menuRequested } from '../../actions';
 
 import './menu-list.scss';
 
 class MenuList extends Component {
     componentDidMount() {
+        this.props.menuRequested();
         const {RestoService} = this.props;
         RestoService.getMenuItems()
         .then(res => this.props.menuLoaded(res))
@@ -47,6 +49,11 @@ const mapDispatchToProps = (dispatch) => {
             dispatch({
                 type: 'MENU_LOADED',
                 payload: newMenu,
+            })
+        },
+        menuRequested: () => {  
+            dispatch({
+                type: 'MENU_REQUESTED',
             })
         }
     }

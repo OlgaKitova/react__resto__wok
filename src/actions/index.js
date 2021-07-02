@@ -5,3 +5,8 @@ export const menuLoaded = (newMenu) => {
     payload: newMenu
   }
 }
+export const menuRequested = () => {
+  return {
+    type: 'MENU_REQUESTED',
+  }
+}

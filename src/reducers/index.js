@@ -10,6 +10,11 @@ const initialState = {
         menu: action.payload,
         loading: false,
       };
+      case 'MENU_REQUESTED':
+      return {
+        menu: state.menu,
+        loading: true,
+      };
       default: 
       return state;
   }
