@@ -1,3 +1,5 @@
 import React from 'react';
 
-export const RestoServiceContext = React.createContext();
+const RestoServiceContext = React.createContext();
+
+export default RestoServiceContext;
