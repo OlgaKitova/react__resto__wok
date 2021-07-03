@@ -6,6 +6,17 @@ import WithRestoService from '../hoc';
 import './cart-table.scss';
 
 const CartTable = ({items, delleteToCart, RestoService}) => {
+    const generateOrder = (items) => {
+    const newOrder = items.map(item => {
+        return {
+            id: item.id,
+            countPiece: item.countPiece,
+        }
+    });
+    console.log(newOrder);
+    return newOrder;
+}
+
     if( items.length === 0){
         return (<div className="cart__title"> Ваша корзина пуста</div>)
     }
@@ -32,21 +43,12 @@ const CartTable = ({items, delleteToCart, RestoService}) => {
                 }
 
             </div>
-            <button onClick = {() => {RestoService.setOrder( generateOrder(items))} } className = "order">Оформить заказ</button>
+            <button onClick={() => {RestoService.setOrder(generateOrder(items))}
+                 } className = "order">Оформить заказ</button>
         </>
     );
 };
 
-
-const generateOrder = (items) => {
-    const newOrder = items.map(item => {
-        return {
-            id: item.id,
-            countPiece: item.countPiece,
-        }
-    })
-    return newOrder;
-}
 
 const mapStateToProps = (state) => {
     return {
