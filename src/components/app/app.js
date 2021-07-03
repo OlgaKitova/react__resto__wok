@@ -10,7 +10,7 @@ const App = () => {
             <AppHeader total={50}/>
             <Switch>
                 <Route path="/" component={MainPage} exact/>
-                 <Route path="/" component={CartPage} />
+                 <Route path="/cart" component={CartPage}/>
             </Switch>
             
         </div>
