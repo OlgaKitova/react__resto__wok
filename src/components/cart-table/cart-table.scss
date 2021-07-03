@@ -46,4 +46,16 @@
         border: 1px solid #fff;
         cursor: pointer;
     }
+     .order {
+         cursor: pointer;
+         display: block;
+         margin: 30px auto 0px auto;
+         width: 170px;
+         height: 40px;
+         border-radius: 20px;
+         background-color: rgb(255, 255, 255);
+         border: none;
+         font-weight: bold;
+         font-size: 14px;
+     }
 }

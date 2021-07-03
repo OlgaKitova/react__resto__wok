@@ -1,18 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import cartIcon from './shopping-cart-solid.svg';
 import './app-header.scss';
 
-const AppHeader = ({total}) => {
+const AppHeader = ({totalPrice}) => {
+    console.log(totalPrice);
     return (
         <header className="header">
             <Link to ={'/'} className = "header__link">Меню</Link>
             <Link to = "/cart" className = "header__link">
                 <img className="header__cart" src={cartIcon} alt="cart"></img>
-                Заказ: {total} рублей
+                Заказ: <span>{totalPrice}</span>рублей
             </Link>
         </header>
     )
 };
 
-export default AppHeader;
+const mapStateToProps = ({totalPrice}) => {
+    return {
+        totalPrice: totalPrice,
+    }
+}
+
+
+export default connect(mapStateToProps)(AppHeader);

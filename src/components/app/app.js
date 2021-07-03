@@ -7,7 +7,7 @@ import { Route, Switch } from 'react-router-dom';
 const App = () => {
     return (
         <div style={{backgroundColor: 'rgba(204,70,70,1)', minHeight: '100vh' }} className="app">
-            <AppHeader total={50}/>
+            <AppHeader/>
             <Switch>
                 <Route path="/" component={MainPage} exact/>
                  <Route path="/cart" component={CartPage}/>
