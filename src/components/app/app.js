@@ -6,7 +6,7 @@ import { Route, Switch } from 'react-router-dom';
 
 const App = () => {
     return (
-        <div style={{backgroundColor: 'rgba(204,70,70,1)'}} className="app">
+        <div style={{backgroundColor: 'rgba(204,70,70,1)', minHeight: '100vh' }} className="app">
             <AppHeader total={50}/>
             <Switch>
                 <Route path="/" component={MainPage} exact/>

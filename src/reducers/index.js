@@ -19,12 +19,24 @@ const initialState = {
       };
       case 'ITEM_TO_CART':
         const id = action.payload;
+        let newItem;
         const item = state.menu.find(item => item.id === id) 
-        const newItem = {
+        if(state.items.findIndex(it => it.id === item.id) !== -1) {
+          state.items.forEach(it => {
+            if(it.id === item.id) {
+              it.countPiece+=1;
+            }
+          });
+          return {
+          ...state
+        }
+        } else {
+          newItem = {
           title: item.title,
           price: item.price,
           id: item.id,
           url: item.url,
+          countPiece: 1,
         }
         return {
           ...state,
@@ -33,6 +45,8 @@ const initialState = {
             newItem,
           ]
         }
+        }
+        
         case 'DELETE_TO_CART':
         const ind = action.payload;
         const itemIndex = state.items.findIndex(item => item.id === ind);
