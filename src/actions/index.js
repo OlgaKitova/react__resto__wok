@@ -16,3 +16,9 @@ export const addedToCart = (id) => {
     payload: id
   }
 }
+export const delleteToCart = (id) => {
+  return {
+    type: 'DELETE_TO_CART',
+    payload: id
+  }
+}

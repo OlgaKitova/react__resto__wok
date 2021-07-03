@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { delleteToCart } from '../../actions';
 
 import './cart-table.scss';
 
-const CartTable = ({items, onDelete}) => {
+const CartTable = ({items, delleteToCart}) => {
     return (
         <>
             <div className="cart__title">Ваш заказ:</div>
@@ -17,7 +18,7 @@ const CartTable = ({items, onDelete}) => {
                     <img src={url} className="cart__item-img" alt={title}></img>
                     <div className="cart__item-title">{title}</div>
                     <div className="cart__item-price">{price} рублей</div>
-                    <div onClick={() => onDelete(id)} className="cart__close">&times;</div>
+                    <div onClick={() => delleteToCart(id)} className="cart__close">&times;</div>
                 </div>)
                     })
 
@@ -34,12 +35,8 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = () => {
-    return {
-        onDelete: (id) => {
-            console.log(`Удалили из корзины ${id}`)
-        }
-    }
+const mapDispatchToProps = {
+ delleteToCart
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartTable);

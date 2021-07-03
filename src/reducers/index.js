@@ -33,6 +33,15 @@ const initialState = {
             newItem,
           ]
         }
+        case 'DELETE_TO_CART':
+        const ind = action.payload;
+        const itemIndex = state.items.findIndex(item => item.id === ind);
+        const beforeStateItems = state.items.slice(0, itemIndex);
+        const afterStateItems = state.items.slice(itemIndex+1);
+        return {
+          ...state,
+          items: [...beforeStateItems, ...afterStateItems],
+        }
       default: 
       return state;
   }
