@@ -1,0 +1,133 @@
+.spinner {
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  height: 50%;
+  width: 50%;
+  position: absolute;
+  margin-top: 10%;
+  margin-left: 70%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+.clock {
+  background: #072101;
+  border-radius: 50%;
+  height: 240px;
+  width: 240px;
+  position: relative;
+}
+
+.clock-inner {
+  background: #ffffff;
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  left: calc(50% - 90px);
+  top: calc(50% - 90px);
+  -webkit-box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3), inset -2px -2px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3), inset -2px -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.clock-numbers {
+  padding-left: 0;
+  height: 120px;
+  width: 120px;
+  position: absolute;
+  left: calc(50% - 60px);
+  top: calc(50% - 60px);
+  list-style: none;
+  margin: 0;
+}
+
+.clock-numbers li {
+  height: 20px;
+  width: 20px;
+  line-height: 20px;
+  margin: -10px;
+  position: absolute;
+  text-align: center;
+  font-family: 'Special Elite', cursive;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  color: #fab907;
+  font-weight: bold;
+}
+
+.clock-numbers li:nth-child(1) {
+  left: 50%;
+  top: 0;
+}
+
+.clock-numbers li:nth-child(2) {
+  right: 0;
+  top: 50%;
+}
+
+.clock-numbers li:nth-child(3) {
+  bottom: 0;
+  left: 50%;
+}
+
+.clock-numbers li:nth-child(4) {
+  left: 0;
+  top: 50%;
+}
+
+.clock-minutes {
+  height: 60px;
+  width: 2px;
+  background: #5e1000;
+  border-radius: 2px;
+  position: absolute;
+  top: calc(50% - 60px);
+  left: calc(50% - 1px);
+  -webkit-transform-origin: 1px 60px;
+  transform-origin: 1px 60px;
+  -webkit-animation: clock 60s steps(60, end) infinite;
+  animation: clock 60s steps(60, end) infinite;
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.clock:hover .clock-minutes {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+.clock-minutes:before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #D56851;
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  top: calc(100% - 4px);
+  left: calc(100% - 5px);
+}
+
+@-webkit-keyframes clock {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes clock {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=spinner.css.map */

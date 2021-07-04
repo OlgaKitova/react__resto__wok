@@ -1,5 +1,6 @@
 .menu {
     &__item {
+        text-decoration: none;
         list-style: none;
         width: 350px;
         min-height: 400px;
@@ -9,6 +10,21 @@
         padding: 20px;
         margin-right: 40px;
         margin-bottom: 40px;
+        transition: all 0.3s ease-in;
+        &:hover {
+            opacity: 0.85;
+            transition: all 0.3s ease-in;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+            transition: all 0.3s ease-in;
+            &:hover {
+                transition: all 0.3s ease-in;
+                color: #29a745;
+
+            }
+        }
     }
     &__title {
         font-size: 22px;
