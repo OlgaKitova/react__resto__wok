@@ -19,18 +19,16 @@ export default class RestoService {
         id: number,
          order: order
        }
-        const response = await fetch(this.getResource(`/orders/`), {
+
+        await fetch(`${this._apiBase}/orders/`, {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(newOrder)
-        });
-
-
-        if (!response.ok){
-            throw new Error('json error'); 
-        }
+        })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
     }
 
     async getOrderNumber(){
