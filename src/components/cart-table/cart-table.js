@@ -13,7 +13,6 @@ const CartTable = ({items, delleteToCart, RestoService}) => {
             countPiece: item.countPiece,
         }
     });
-    console.log(newOrder);
     return newOrder;
 }
 
@@ -43,7 +42,11 @@ const CartTable = ({items, delleteToCart, RestoService}) => {
                 }
 
             </div>
-            <button onClick={() => {RestoService.setOrder(generateOrder(items))}
+            <button onClick={() => {
+                RestoService.setOrder(generateOrder(items));
+                items.map(item => delleteToCart(item.id))
+                 
+            }
                  } className = "order">Оформить заказ</button>
         </>
     );
