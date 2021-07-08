@@ -1,4 +1,5 @@
 export default class RestoService {
+   text = null;
   _apiBase = 'https://my-json-server.typicode.com/OlgaKitova/demo';
 
   async getResource(url) {

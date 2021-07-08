@@ -2,10 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { delleteToCart } from '../../actions';
 import WithRestoService from '../hoc';
-
 import './cart-table.scss';
 
+
+    let bool = false;
+
 const CartTable = ({items, delleteToCart, RestoService}) => {
+
     const generateOrder = (items) => {
     const newOrder = items.map(item => {
         return {
@@ -16,8 +19,13 @@ const CartTable = ({items, delleteToCart, RestoService}) => {
     return newOrder;
 }
 
-    if( items.length === 0){
-        return (<div className="cart__title"> Ваша корзина пуста</div>)
+    if(items.length === 0 && !bool){
+        return (
+                <div className="cart__title"> Ваша корзина пуста</div>)
+    } else if(items.length === 0 && bool) {
+        return (
+            <div className="cart__title"> Ваш заказ оформлен</div>
+        )
     }
 
     return (
@@ -42,12 +50,14 @@ const CartTable = ({items, delleteToCart, RestoService}) => {
                 }
 
             </div>
-            <button onClick={() => {
+            <button  className = "order" onClick={() => {
+                bool = true;
                 RestoService.setOrder(generateOrder(items));
-                items.map(item => delleteToCart(item.id))
-                 
-            }
-                 } className = "order">Оформить заказ</button>
+                items.map(item => delleteToCart(item.id));
+                setTimeout(() => {
+                    return bool = !bool
+                }, 2000)}
+            }>Оформить заказ</button>
         </>
     );
 };
