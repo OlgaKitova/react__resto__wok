@@ -5,7 +5,6 @@ import cartIcon from './shopping-cart-solid.svg';
 import './app-header.scss';
 
 const AppHeader = ({totalPrice}) => {
-    console.log(totalPrice);
     return (
         <header className="header">
             <Link to ={'/'} className = "header__link">Меню</Link>

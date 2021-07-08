@@ -1,5 +1,5 @@
 export default class RestoService {
-  _apiBase = 'http://localhost:3000';
+  _apiBase = 'https://my-json-server.typicode.com/OlgaKitova/demo';
 
   async getResource(url) {
     const res = await fetch(`${this._apiBase}${url}`);
@@ -19,7 +19,7 @@ export default class RestoService {
         id: number,
          order: order
        }
-        const response = await fetch(`${this._apiBase}/orders/`, {
+        const response = await fetch(this.getResource(`/orders/`), {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'
@@ -39,4 +39,4 @@ export default class RestoService {
 
         return orderNumber
     }
-}
+  }
